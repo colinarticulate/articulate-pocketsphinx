@@ -1,3 +1,10 @@
+xyzPocketsphinx-5prealpha ©Articulate.xyz
+David Barbera
+
+  * new API accepting stream of bytes for audio and jsgf-compliant data
+  
+
+
 Pocketsphinx 0.8
 ^^^^^^^^^^^^^^^^
 
@@ -28,7 +35,7 @@ Improvements:
  * Continuous decoder can decode files, not from the microphone
  * Add senone score dumping and reloading capability
  * Functional alignment pass
- * Symbian support 
+ * Symbian support
  * Add the Android makefile and other JNI stuff
  * Case sensitive names, including phone names
  * Better error messages
@@ -40,7 +47,7 @@ Bug fixes:
  * Fixes the bug with reading transition matrix on big-endian platforms
  * Fixes very important regression with NULL transitions in fsg search
  * Proper acoustic score scaling during posterior calculation.
- 
+
 And many, many, many more intersting things!
 
 Pocketsphinx pre
