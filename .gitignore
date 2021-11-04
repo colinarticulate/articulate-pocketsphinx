@@ -39,13 +39,13 @@ sphinxbase.pc
 #accounting for whatever possible change of name
 #assumed: new names include the name of the original library
 #sphinxbase:
-*/src/sphinx_adtools/*sphinx*_cont_seg*
-*/src/sphinx_adtools/*sphinx*_pitch*
-*/src/sphinx_cepview/*sphinx*_cepview*
-*/src/sphinx_fe/*sphinx*_fe*
-*/src/sphinx_jsgf2fsg/*sphinx*_jsgf2fsg*
-*/src/sphinx_lmtools/*sphinx*_lm_convert*
-*/src/sphinx_lmtools/*sphinx*_lm_eval*
+*/src/sphinx_adtools/*sphinx*_cont_seg
+*/src/sphinx_adtools/*sphinx*_pitch
+*/src/sphinx_cepview/*sphinx*_cepview
+*/src/sphinx_fe/*sphinx*_fe
+*/src/sphinx_jsgf2fsg/*sphinx*_jsgf2fsg
+*/src/sphinx_lmtools/*sphinx*_lm_convert
+*/src/sphinx_lmtools/*sphinx*_lm_eval
 #pocketsphinx:
 */src/programs/*pocketsphinx*_continuous*
 */src/programs/*pocketsphinx*_batch*
