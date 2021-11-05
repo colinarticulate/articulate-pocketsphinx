@@ -223,6 +223,16 @@ int ps_set_fsg(ps_decoder_t *ps, const char *name, fsg_model_t *fsg);
 /**
  * Adds new search using JSGF model.
  *
+ * Convenient method to load JSGF model and create a search wihtout files.
+ *
+ * @see ps_set_fsg
+ */
+POCKETSPHINX_EXPORT
+int ps_set_jsgf_from_buffer(ps_decoder_t *ps, const char *name, const char *path, void* buffer, size_t size);
+
+/**
+ * Adds new search using JSGF model.
+ *
  * Convenient method to load JSGF model and create a search.
  *
  * @see ps_set_fsg

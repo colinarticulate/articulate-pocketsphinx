@@ -91,7 +91,8 @@ jsgf_t *jsgf_parse_file(const char *filename, jsgf_t *parent);
  * @return new JSGF grammar object, or NULL on failure.
  */
 SPHINXBASE_EXPORT
-jsgf_t *jsgf_parse_buffered_file(const char *filename, jsgf_t * parent, void *buffer, size_t size);
+jsgf_t *
+jsgf_parse_buffered_file(const char *filename, jsgf_t * parent, void *buffer, size_t size);
 
 /**
  * Parse a JSGF grammar from a string.
