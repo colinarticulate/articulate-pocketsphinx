@@ -44,7 +44,7 @@
 #include <errno.h>
 
 /* Win32/WinCE DLL gunk */
-#include <sphinxbase/sphinxbase_export.h>
+#include <xyzsphinxbase/sphinxbase_export.h>
 
 /**
  * @file err.h

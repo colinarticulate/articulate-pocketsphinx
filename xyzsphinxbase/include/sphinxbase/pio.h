@@ -88,8 +88,8 @@
 #endif
 
 /* Win32/WinCE DLL gunk */
-#include <sphinxbase/sphinxbase_export.h>
-#include <sphinxbase/prim_type.h>
+#include <xyzsphinxbase/sphinxbase_export.h>
+#include <xyzsphinxbase/prim_type.h>
 
 /** \file pio.h
  * \brief file IO related operations.  

@@ -39,11 +39,11 @@
 #include <string.h>
 #include <assert.h>
 
-#include <sphinxbase/err.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/strfuncs.h>
-#include <sphinxbase/pio.h>
-#include <sphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/strfuncs.h>
+#include <xyzsphinxbase/pio.h>
+#include <xyzsphinxbase/cmd_ln.h>
 
 #include "pocketsphinx_internal.h"
 #include "allphone_search.h"

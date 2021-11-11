@@ -40,8 +40,8 @@
 #define __KWS_SEARCH_H__
 
 /* SphinxBase headers. */
-#include <sphinxbase/glist.h>
-#include <sphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/glist.h>
+#include <xyzsphinxbase/cmd_ln.h>
 
 /* Local headers. */
 #include "pocketsphinx_internal.h"

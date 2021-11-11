@@ -38,8 +38,8 @@
 #ifndef __LM_TRIE_H__
 #define __LM_TRIE_H__
 
-#include <sphinxbase/pio.h>
-#include <sphinxbase/bitarr.h>
+#include <xyzsphinxbase/pio.h>
+#include <xyzsphinxbase/bitarr.h>
 
 #include "ngram_model_internal.h"
 #include "lm_trie_quant.h"

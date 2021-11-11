@@ -55,12 +55,12 @@
 #include <sys/select.h>
 #endif
 
-#include <sphinxbase/prim_type.h>
-#include <sphinxbase/ad.h>
-#include <sphinxbase/fe.h>
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/err.h>
+#include <xyzsphinxbase/prim_type.h>
+#include <xyzsphinxbase/ad.h>
+#include <xyzsphinxbase/fe.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/err.h>
 
 #define BLOCKSIZE 1024
 

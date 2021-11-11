@@ -49,12 +49,12 @@
 
 /* SphinxBase headers */
 #include <sphinx_config.h>
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/fixpoint.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/bio.h>
-#include <sphinxbase/err.h>
-#include <sphinxbase/prim_type.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/fixpoint.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/bio.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/prim_type.h>
 
 /* Local headers */
 #include "s2_semi_mgau.h"

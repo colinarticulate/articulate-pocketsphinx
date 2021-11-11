@@ -91,8 +91,8 @@
 #include <string.h>
 #include <gst/gst.h>
 
-#include <sphinxbase/err.h>
-#include <sphinxbase/strfuncs.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/strfuncs.h>
 
 #include "gstpocketsphinx.h"
 

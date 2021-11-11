@@ -61,8 +61,8 @@
 #include <sys/select.h>
 #endif
 
-#include <sphinxbase/err.h>
-#include <sphinxbase/ad.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/ad.h>
 
 #include "pocketsphinx.h"
 

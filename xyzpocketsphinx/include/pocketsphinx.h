@@ -43,10 +43,10 @@
 #include <stdio.h>
 
 /* SphinxBase headers we need. */
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/logmath.h>
-#include <sphinxbase/fe.h>
-#include <sphinxbase/feat.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/logmath.h>
+#include <xyzsphinxbase/fe.h>
+#include <xyzsphinxbase/feat.h>
 
 /* PocketSphinx headers (not many of them!) */
 #include <pocketsphinx_export.h>

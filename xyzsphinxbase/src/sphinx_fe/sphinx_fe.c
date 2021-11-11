@@ -44,15 +44,15 @@
 #include <config.h>
 #endif
 
-#include <sphinxbase/fe.h>
-#include <sphinxbase/strfuncs.h>
-#include <sphinxbase/pio.h>
-#include <sphinxbase/filename.h>
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/err.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/byteorder.h>
-#include <sphinxbase/hash_table.h>
+#include <xyzsphinxbase/fe.h>
+#include <xyzsphinxbase/strfuncs.h>
+#include <xyzsphinxbase/pio.h>
+#include <xyzsphinxbase/filename.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/byteorder.h>
+#include <xyzsphinxbase/hash_table.h>
 
 #include "sphinx_wave2feat.h"
 #include "cmd_ln_defn.h"

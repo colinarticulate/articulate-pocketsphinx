@@ -37,11 +37,11 @@
 
 #include <string.h>
 
-#include <sphinxbase/err.h>
-#include <sphinxbase/pio.h>
-#include <sphinxbase/strfuncs.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/byteorder.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/pio.h>
+#include <xyzsphinxbase/strfuncs.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/byteorder.h>
 
 #include "ngram_model_internal.h"
 #include "ngrams_raw.h"

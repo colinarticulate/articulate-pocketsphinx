@@ -37,8 +37,8 @@
 #ifndef __NGRAM_MODEL_TRIE_H__
 #define __NGRAM_MODEL_TRIE_H__
 
-#include <sphinxbase/prim_type.h>
-#include <sphinxbase/logmath.h>
+#include <xyzsphinxbase/prim_type.h>
+#include <xyzsphinxbase/logmath.h>
 
 #include "ngram_model_internal.h"
 #include "lm_trie.h"

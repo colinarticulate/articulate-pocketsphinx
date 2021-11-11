@@ -69,8 +69,8 @@
 #ifndef __PS_SEARCH_H__
 #define __PS_SEARCH_H__
 
-#include <sphinxbase/fsg_model.h>
-#include <sphinxbase/ngram_model.h>
+#include <xyzsphinxbase/fsg_model.h>
+#include <xyzsphinxbase/ngram_model.h>
 
 #ifdef __cplusplus
 extern "C" {

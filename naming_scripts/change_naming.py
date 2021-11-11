@@ -70,7 +70,6 @@ def replace_name_in_project(project, jsondata):
             replace_in_file(filename, previous_name, new_name)
 
 
-
 def replace_make_am_files():
     '''
         No option but to replace the Makefile.am scripts for 'adtools' and 'lmtools'.
@@ -128,6 +127,50 @@ def add_src_code_modifications(path):
     print("Source code changes finished.")
 
 
+def change_pattern(pattern, previous_name, new_name):
+    return new_name.join(pattern.split(previous_name))
+
+
+def replace_sphinxbase_system_header(path, pattern, new_pattern):
+    print(f"Replacing {pattern} for {new_pattern}")
+    files = {}
+    for (dirpath, dirnames, filenames) in os.walk(path):
+        for filename in filenames:
+            #print(filename)
+            #print(dirpath[len(path):])
+            #files[filename] = os.sep.join([dirpath[len(path):], filename])
+            #files[filename] = os.sep.join([dirpath, filename])
+            path_file = os.sep.join([dirpath, filename])
+            filename_bare, ext = os.path.splitext(path_file)
+            if ext==".c" or ext==".h":
+                #print(filename)
+                with open(path_file, 'r') as f:
+                    contents = f.read()
+                    #print(contents)
+                    parts = contents.split(pattern)
+                    if len(parts) > 1:
+                        files[filename] = os.sep.join([dirpath[len(path):], filename])
+                        print(f"       {files[filename]}")
+                        new_contents = new_pattern.join(parts)
+                        with open(path_file, 'w') as f:
+                            f.write(new_contents)
+                        
+                
+    return files
+
+
+def change_sphinxbase_system_headers():
+    pattern = "#include <sphinxbase/"
+    previous_name = "sphinxbase"
+    new_name = "xyzsphinxbase"
+    new_pattern = change_pattern(pattern, previous_name, new_name)
+    path_original_ps = "../pocketsphinx"
+    path_original_sb = "../sphinxbase"
+    ps_modified_files = replace_sphinxbase_system_header(path_original_ps, pattern, new_pattern)
+    sb_modified_files = replace_sphinxbase_system_header(path_original_sb, pattern, new_pattern)
+
+
+
 def main():
 
     file_ps="replace_ps.json"
@@ -143,6 +186,10 @@ def main():
     #Order matters in here:
     #Change source code:
     add_src_code_modifications( "new_version" )
+
+    #Change sphinxbase system headers in source code:
+    change_sphinxbase_system_headers()
+
 
     #For pocketsphinx:
     replace_name_in_project("../pocketsphinx",jps[1])

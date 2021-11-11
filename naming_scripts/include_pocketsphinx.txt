@@ -1,0 +1,6 @@
+include/cmdln_macro.h
+include/pocketsphinx.h
+include/pocketsphinx_export.h
+include/ps_lattice.h
+include/ps_mllr.h
+include/ps_search.h

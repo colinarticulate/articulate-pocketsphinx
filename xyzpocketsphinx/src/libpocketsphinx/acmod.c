@@ -47,13 +47,13 @@
 #include <math.h>
 
 /* SphinxBase headers. */
-#include <sphinxbase/prim_type.h>
-#include <sphinxbase/err.h>
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/strfuncs.h>
-#include <sphinxbase/byteorder.h>
-#include <sphinxbase/feat.h>
-#include <sphinxbase/bio.h>
+#include <xyzsphinxbase/prim_type.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/strfuncs.h>
+#include <xyzsphinxbase/byteorder.h>
+#include <xyzsphinxbase/feat.h>
+#include <xyzsphinxbase/bio.h>
 
 /* Local headers. */
 #include "cmdln_macro.h"

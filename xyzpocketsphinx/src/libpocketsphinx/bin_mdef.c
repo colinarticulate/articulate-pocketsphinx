@@ -52,11 +52,11 @@
 #include <assert.h>
 
 /* SphinxBase headers. */
-#include <sphinxbase/prim_type.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/byteorder.h>
-#include <sphinxbase/case.h>
-#include <sphinxbase/err.h>
+#include <xyzsphinxbase/prim_type.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/byteorder.h>
+#include <xyzsphinxbase/case.h>
+#include <xyzsphinxbase/err.h>
 
 /* Local headers. */
 #include "mdef.h"

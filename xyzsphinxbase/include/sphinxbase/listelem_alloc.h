@@ -56,8 +56,8 @@ extern "C" {
 #endif
 
 /* Win32/WinCE DLL gunk */
-#include <sphinxbase/sphinxbase_export.h>
-#include <sphinxbase/prim_type.h>
+#include <xyzsphinxbase/sphinxbase_export.h>
+#include <xyzsphinxbase/prim_type.h>
 
 /**
  * List element allocator object.

@@ -39,10 +39,10 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include <sphinxbase/prim_type.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/err.h>
-#include <sphinxbase/priority_queue.h>
+#include <xyzsphinxbase/prim_type.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/priority_queue.h>
 
 #include "lm_trie.h"
 #include "lm_trie_quant.h"

@@ -40,7 +40,7 @@
 #define __KWS_DETECTIONS_H__
 
 /* SphinxBase headers. */
-#include <sphinxbase/glist.h>
+#include <xyzsphinxbase/glist.h>
 
 /* Local headers. */
 #include "pocketsphinx_internal.h"

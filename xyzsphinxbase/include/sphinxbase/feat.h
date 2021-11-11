@@ -44,11 +44,11 @@
 #include <stdio.h>
 
 /* Win32/WinCE DLL gunk */
-#include <sphinxbase/sphinxbase_export.h>
-#include <sphinxbase/prim_type.h>
-#include <sphinxbase/fe.h>
-#include <sphinxbase/cmn.h>
-#include <sphinxbase/agc.h>
+#include <xyzsphinxbase/sphinxbase_export.h>
+#include <xyzsphinxbase/prim_type.h>
+#include <xyzsphinxbase/fe.h>
+#include <xyzsphinxbase/cmn.h>
+#include <xyzsphinxbase/agc.h>
 
 #ifdef __cplusplus
 extern "C" {
