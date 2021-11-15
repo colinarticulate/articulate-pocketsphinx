@@ -43,7 +43,7 @@
  */
 
 /* SphinxBase headers. */
-#include <sphinxbase/hash_table.h>
+#include <xyzsphinxbase/hash_table.h>
 
 /* Local headers. */
 #include "s3types.h"

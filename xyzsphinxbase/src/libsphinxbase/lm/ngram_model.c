@@ -47,14 +47,14 @@
 #include <string.h>
 #include <assert.h>
 
-#include "sphinxbase/ngram_model.h"
-#include "sphinxbase/ckd_alloc.h"
-#include "sphinxbase/filename.h"
-#include "sphinxbase/pio.h"
-#include "sphinxbase/err.h"
-#include "sphinxbase/logmath.h"
-#include "sphinxbase/strfuncs.h"
-#include "sphinxbase/case.h"
+#include "xyzsphinxbase/ngram_model.h"
+#include "xyzsphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/filename.h"
+#include "xyzsphinxbase/pio.h"
+#include "xyzsphinxbase/err.h"
+#include "xyzsphinxbase/logmath.h"
+#include "xyzsphinxbase/strfuncs.h"
+#include "xyzsphinxbase/case.h"
 
 #include "ngram_model_internal.h"
 #include "ngram_model_trie.h"

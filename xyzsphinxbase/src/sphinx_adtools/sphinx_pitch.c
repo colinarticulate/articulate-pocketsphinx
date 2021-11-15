@@ -42,13 +42,13 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/yin.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/byteorder.h>
-#include <sphinxbase/strfuncs.h>
-#include <sphinxbase/err.h>
-#include <sphinxbase/pio.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/yin.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/byteorder.h>
+#include <xyzsphinxbase/strfuncs.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/pio.h>
 
 static arg_t defn[] = {
   { "-i",

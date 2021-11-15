@@ -93,10 +93,10 @@
 #pragma warning (disable: 4018)
 #endif
 
-#include "sphinxbase/hash_table.h"
-#include "sphinxbase/err.h"
-#include "sphinxbase/ckd_alloc.h"
-#include "sphinxbase/case.h"
+#include "xyzsphinxbase/hash_table.h"
+#include "xyzsphinxbase/err.h"
+#include "xyzsphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/case.h"
 
 
 #if 0

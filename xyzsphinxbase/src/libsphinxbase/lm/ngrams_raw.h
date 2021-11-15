@@ -38,11 +38,11 @@
 #ifndef __NGRAMS_RAW_H__
 #define __NGRAMS_RAW_H__
 
-#include <sphinxbase/hash_table.h>
-#include <sphinxbase/logmath.h>
-#include <sphinxbase/prim_type.h>
-#include <sphinxbase/pio.h>
-#include <sphinxbase/err.h>
+#include <xyzsphinxbase/hash_table.h>
+#include <xyzsphinxbase/logmath.h>
+#include <xyzsphinxbase/prim_type.h>
+#include <xyzsphinxbase/pio.h>
+#include <xyzsphinxbase/err.h>
 
 typedef struct ngram_raw_s {
     uint32 *words;              /* array of word indexes, length corresponds to ngram order */

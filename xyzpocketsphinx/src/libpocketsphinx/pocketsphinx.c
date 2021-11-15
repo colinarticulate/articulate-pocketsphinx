@@ -44,12 +44,12 @@
 #endif
 
 /* SphinxBase headers. */
-#include <sphinxbase/err.h>
-#include <sphinxbase/strfuncs.h>
-#include <sphinxbase/filename.h>
-#include <sphinxbase/pio.h>
-#include <sphinxbase/jsgf.h>
-#include <sphinxbase/hash_table.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/strfuncs.h>
+#include <xyzsphinxbase/filename.h>
+#include <xyzsphinxbase/pio.h>
+#include <xyzsphinxbase/jsgf.h>
+#include <xyzsphinxbase/hash_table.h>
 
 /* Local headers. */
 #include "cmdln_macro.h"

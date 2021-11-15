@@ -42,9 +42,9 @@
 
 
 /* SphinxBase headers. */
-#include <sphinxbase/glist.h>
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/fsg_model.h>
+#include <xyzsphinxbase/glist.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/fsg_model.h>
 
 /* Local headers. */
 #include "pocketsphinx_internal.h"

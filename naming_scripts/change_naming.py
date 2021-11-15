@@ -46,29 +46,11 @@ def replace_name_in_project(project, jsondata):
         filename = os.path.join(cwd, project, file)
         print("\n", filename )
         previous_names = jsondata[file]['previous']
-        for previous_name in previous_names:
-            
-            if "pocketsphinx" in previous_name:
-                parts = previous_name.split("pocketsphinx")
-                #print(parts)
-                new_name = "xyzpocketsphinx".join(parts)
-            elif "sphinx" in previous_name:
-                parts = previous_name.split("sphinx")
-                new_name = "xyzsphinx".join(parts)
-                
-            elif "PocketSphinx" in previous_name:
-                parts = previous_name.split("PocketSphinx")
-                #print(parts)
-                new_name = "xyzPocketSphinx".join(parts)
-            elif "SphinxBase" in previous_name:
-                parts = previous_name.split("SphinxBase")
-                new_name = "xyzSphinxBase".join(parts)
-            else:
-                print(f"Error in: {filename} replacing {previous_name}.")
-                
+        new_names = jsondata[file]['new']
+        for i, previous_name in enumerate(previous_names):
+            new_name = new_names[i]
             print(f"   {previous_name} ----> {new_name}")
             replace_in_file(filename, previous_name, new_name)
-
 
 
 def replace_make_am_files():
@@ -102,12 +84,15 @@ def replace_make_am_files():
 
 
 def rename_key_files_and_folders():
+    #Order matters!!!
     #pocketsphinx
-    os.rename(os.path.join("../","pocketsphinx","pocketsphinx.pc.in"), os.path.join("../", "pocketsphinx", "xyzpocketsphinx.pc.in"))
-    os.rename(os.path.join("../","pocketsphinx"), os.path.join("../", "xyzpocketsphinx"))
+    os.rename(os.path.join("../","pocketsphinx","pocketsphinx.pc.in"), os.path.join("../", "pocketsphinx", "xyzpocketsphinx.pc.in")) #pkg-config
+    os.rename(os.path.join("../","pocketsphinx"), os.path.join("../", "xyzpocketsphinx")) #main folder
     #sphinxbase
-    os.rename(os.path.join("../","sphinxbase","sphinxbase.pc.in"), os.path.join("../", "sphinxbase", "xyzsphinxbase.pc.in"))
-    os.rename(os.path.join("../","sphinxbase"), os.path.join("../", "xyzsphinxbase"))
+    os.rename(os.path.join("../","sphinxbase","sphinxbase.pc.in"), os.path.join("../", "sphinxbase", "xyzsphinxbase.pc.in")) #pkg-config
+    os.rename(os.path.join("../","sphinxbase","include","sphinxbase"), os.path.join("../", "sphinxbase", "include", "xyzsphinxbase")) #include
+    os.rename(os.path.join("../","sphinxbase"), os.path.join("../", "xyzsphinxbase")) #main folder
+    
 
 
 def add_src_code_modifications(path):
@@ -128,6 +113,60 @@ def add_src_code_modifications(path):
     print("Source code changes finished.")
 
 
+def change_pattern(pattern, previous_name, new_name):
+    return new_name.join(pattern.split(previous_name))
+
+
+def replace_sphinxbase_system_header(path, pattern, new_pattern):
+    print(f"Replacing {pattern} for {new_pattern}")
+    files = {}
+    for (dirpath, dirnames, filenames) in os.walk(path):
+        for filename in filenames:
+            #print(filename)
+            #print(dirpath[len(path):])
+            #files[filename] = os.sep.join([dirpath[len(path):], filename])
+            #files[filename] = os.sep.join([dirpath, filename])
+            path_file = os.sep.join([dirpath, filename])
+            filename_bare, ext = os.path.splitext(path_file)
+            if ext==".c" or ext==".h":
+                #print(filename)
+                with open(path_file, 'r') as f:
+                    contents = f.read()
+                    #print(contents)
+                    parts = contents.split(pattern)
+                    if len(parts) > 1:
+                        files[filename] = os.sep.join([dirpath[len(path):], filename])
+                        print(f"       {files[filename]}")
+                        new_contents = new_pattern.join(parts)
+                        with open(path_file, 'w') as f:
+                            f.write(new_contents)
+                        
+                
+    return files
+
+
+def change_sphinxbase_sourcecode_headers():
+    #System
+    pattern = "#include <sphinxbase/"
+    previous_name = "sphinxbase"
+    new_name = "xyzsphinxbase"
+    new_pattern = change_pattern(pattern, previous_name, new_name)
+    path_original_ps = "../pocketsphinx"
+    path_original_sb = "../sphinxbase"
+    ps_modified_files = replace_sphinxbase_system_header(path_original_ps, pattern, new_pattern)
+    sb_modified_files = replace_sphinxbase_system_header(path_original_sb, pattern, new_pattern)
+
+    #Local
+    pattern = "#include \"sphinxbase/"
+    previous_name = "sphinxbase"
+    new_name = "xyzsphinxbase"
+    new_pattern = change_pattern(pattern, previous_name, new_name)
+    path_original_ps = "../pocketsphinx"
+    path_original_sb = "../sphinxbase"
+    ps_modified_files = replace_sphinxbase_system_header(path_original_ps, pattern, new_pattern)
+    sb_modified_files = replace_sphinxbase_system_header(path_original_sb, pattern, new_pattern)
+
+
 def main():
 
     file_ps="replace_ps.json"
@@ -143,6 +182,10 @@ def main():
     #Order matters in here:
     #Change source code:
     add_src_code_modifications( "new_version" )
+
+    #Change sphinxbase system headers in source code:
+    change_sphinxbase_sourcecode_headers()
+
 
     #For pocketsphinx:
     replace_name_in_project("../pocketsphinx",jps[1])

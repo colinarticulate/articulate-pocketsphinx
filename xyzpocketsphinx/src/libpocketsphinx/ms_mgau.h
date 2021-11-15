@@ -97,9 +97,9 @@
 #define _LIBFBS_MS_CONT_MGAU_H_
 
 /* SphinxBase headers. */
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/logmath.h>
-#include <sphinxbase/feat.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/logmath.h>
+#include <xyzsphinxbase/feat.h>
 
 /* Local headers. */
 #include "acmod.h"

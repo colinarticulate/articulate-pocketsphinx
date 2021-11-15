@@ -73,9 +73,9 @@
 #include <math.h>
 
 /* SphinxBase headers. */
-#include <sphinxbase/err.h>
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/bitvec.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/bitvec.h>
 
 /* Local headers. */
 #include "vector.h"

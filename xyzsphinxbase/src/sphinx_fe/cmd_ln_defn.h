@@ -47,8 +47,8 @@
 #ifndef CMD_LN_DEFN_H
 #define CMD_LN_DEFN_H
 
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/fe.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/fe.h>
 
 const char helpstr[] =
   "Description: \n\

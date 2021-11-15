@@ -59,8 +59,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "sphinxbase/prim_type.h"
-#include "sphinxbase/ad.h"
+#include "xyzsphinxbase/prim_type.h"
+#include "xyzsphinxbase/ad.h"
 
 #if defined (__CYGWIN__)
 #include <w32api/windows.h>
@@ -100,7 +100,7 @@ struct ad_rec_s {
                                            data is returned frequently enough.) */
 
 #ifdef _WIN32_WCE
-#include "sphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/ckd_alloc.h"
 static void
 wavein_error(char *src, int32 ret)
 {

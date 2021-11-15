@@ -18,7 +18,9 @@ $ cd ..
 $ cd xyzpocketsphinx
 $ ./autogen.sh
 $ make  
-$ sudo make install
+$ sudo make install  
+$ cd /usr/local/lib 
+$ sudo ldconfig  
 
 ```
 

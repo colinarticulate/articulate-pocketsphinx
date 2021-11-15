@@ -2,20 +2,20 @@ my_plugins =
 my_headers =
 my_files =
 if BUILD_GST
-my_plugins += libgstxyzpocketsphinx.la
+my_plugins += libxyzgstpocketsphinx.la
 endif
 
 plugin_LTLIBRARIES = $(my_plugins)
 
-libgstxyzpocketsphinx_la_SOURCES = gstpocketsphinx.c
+libxyzgstpocketsphinx_la_SOURCES = gstpocketsphinx.c
 
-libgstxyzpocketsphinx_la_LIBADD = \
+libxyzgstpocketsphinx_la_LIBADD = \
 	$(GST_LIBS) \
 	-lgstaudio-$(GST_MAJORMINOR) \
 	$(top_builddir)/src/libpocketsphinx/libxyzpocketsphinx.la \
 	-lxyzsphinxbase
 
-libgstxyzpocketsphinx_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
+libxyzgstpocketsphinx_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
 
 noinst_HEADERS = gstpocketsphinx.h
 

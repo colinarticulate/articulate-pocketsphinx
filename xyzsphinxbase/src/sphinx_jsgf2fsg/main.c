@@ -37,11 +37,11 @@
 
 #include <string.h>
 
-#include <sphinxbase/hash_table.h>
-#include <sphinxbase/fsg_model.h>
-#include <sphinxbase/jsgf.h>
-#include <sphinxbase/err.h>
-#include <sphinxbase/strfuncs.h>
+#include <xyzsphinxbase/hash_table.h>
+#include <xyzsphinxbase/fsg_model.h>
+#include <xyzsphinxbase/jsgf.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/strfuncs.h>
 
 static const arg_t defn[] = {
   { "-help",

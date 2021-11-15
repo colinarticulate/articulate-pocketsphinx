@@ -22,7 +22,7 @@ noinst_HEADERS =				\
 	fe_warp_inverse_linear.h		\
 	fe_warp_piecewise_linear.h
 
-AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase \
+AM_CFLAGS =-I$(top_srcdir)/include/xyzsphinxbase \
 	   -I$(top_srcdir)/include \
            -I$(top_builddir)/include 
 

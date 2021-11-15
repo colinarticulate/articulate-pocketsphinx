@@ -26,6 +26,6 @@ libxyzsphinxad_la_LIBADD = \
 
 AM_CFLAGS =\
 	@ad_cppflags@ \
-	-I$(top_srcdir)/include/sphinxbase \
+	-I$(top_srcdir)/include/xyzsphinxbase \
 	-I$(top_srcdir)/include \
 	-I$(top_builddir)/include

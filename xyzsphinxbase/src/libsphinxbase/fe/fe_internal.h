@@ -42,8 +42,8 @@
 #include <config.h>
 #endif
 
-#include "sphinxbase/fe.h"
-#include "sphinxbase/fixpoint.h"
+#include "xyzsphinxbase/fe.h"
+#include "xyzsphinxbase/fixpoint.h"
 
 #include "fe_noise.h"
 #include "fe_prespch_buf.h"

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <pocketsphinx.h>
 
-#include <sphinxbase/logmath.h>
+#include <xyzsphinxbase/logmath.h>
 
 #include "acmod.h"
 #include "test_macros.h"

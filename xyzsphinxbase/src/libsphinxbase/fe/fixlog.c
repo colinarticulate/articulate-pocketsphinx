@@ -45,8 +45,8 @@
 #include <config.h>
 #endif
 
-#include "sphinxbase/prim_type.h"
-#include "sphinxbase/fixpoint.h"
+#include "xyzsphinxbase/prim_type.h"
+#include "xyzsphinxbase/fixpoint.h"
 
 #include "fe_internal.h"
 

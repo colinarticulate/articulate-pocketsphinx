@@ -43,8 +43,8 @@
 #include <string.h>
 #include <assert.h>
 
-#include "sphinxbase/ckd_alloc.h"
-#include "sphinxbase/err.h"
+#include "xyzsphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/err.h"
 
 #include "fe_prespch_buf.h"
 

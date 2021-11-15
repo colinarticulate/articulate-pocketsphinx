@@ -39,7 +39,7 @@ EXTRA_DIST = \
 	blas_lite.c \
 	f2c_lite.c
 
-AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase \
+AM_CFLAGS =-I$(top_srcdir)/include/xyzsphinxbase \
 	   -I$(top_srcdir)/include \
 	   -I$(top_builddir)/include 
 

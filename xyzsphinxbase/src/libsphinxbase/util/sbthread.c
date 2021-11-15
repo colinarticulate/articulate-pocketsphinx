@@ -43,9 +43,9 @@
 
 #include <string.h>
 
-#include "sphinxbase/sbthread.h"
-#include "sphinxbase/ckd_alloc.h"
-#include "sphinxbase/err.h"
+#include "xyzsphinxbase/sbthread.h"
+#include "xyzsphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/err.h"
 
 /*
  * Platform-specific parts: threads, mutexes, and signals.

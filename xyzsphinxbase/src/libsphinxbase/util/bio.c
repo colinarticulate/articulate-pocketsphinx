@@ -68,9 +68,9 @@
 #pragma warning (disable: 4996)
 #endif
 
-#include "sphinxbase/bio.h"
-#include "sphinxbase/err.h"
-#include "sphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/bio.h"
+#include "xyzsphinxbase/err.h"
+#include "xyzsphinxbase/ckd_alloc.h"
 
 
 #define BIO_HDRARG_MAX	32

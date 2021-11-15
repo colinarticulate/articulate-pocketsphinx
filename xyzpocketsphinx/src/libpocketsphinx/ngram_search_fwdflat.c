@@ -44,9 +44,9 @@
 #include <assert.h>
 
 /* SphinxBase headers. */
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/listelem_alloc.h>
-#include <sphinxbase/err.h>
+#include <xyzsphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/listelem_alloc.h>
+#include <xyzsphinxbase/err.h>
 
 /* Local headers. */
 #include "ngram_search.h"

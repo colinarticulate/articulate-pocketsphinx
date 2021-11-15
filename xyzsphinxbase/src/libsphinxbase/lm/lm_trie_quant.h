@@ -37,7 +37,7 @@
 #ifndef __LM_TRIE_QUANT_H__
 #define __LM_TRIE_QUANT_H__
 
-#include <sphinxbase/bitarr.h>
+#include <xyzsphinxbase/bitarr.h>
 
 #include "ngrams_raw.h"
 

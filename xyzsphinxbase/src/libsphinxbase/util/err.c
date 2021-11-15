@@ -49,10 +49,10 @@
 #include <string.h>
 #include <errno.h>
 
-#include "sphinxbase/err.h"
-#include "sphinxbase/prim_type.h"
-#include "sphinxbase/filename.h"
-#include "sphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/err.h"
+#include "xyzsphinxbase/prim_type.h"
+#include "xyzsphinxbase/filename.h"
+#include "xyzsphinxbase/ckd_alloc.h"
 
 static FILE*  logfp = NULL;
 static int    logfp_disabled = FALSE;

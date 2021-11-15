@@ -52,9 +52,9 @@
 #include <assert.h>
 
 /* SphinxBase headers. */
-#include <sphinxbase/prim_type.h>
-#include <sphinxbase/err.h>
-#include <sphinxbase/ckd_alloc.h>
+#include <xyzsphinxbase/prim_type.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/ckd_alloc.h>
 
 /* Local headers. */
 #include "fsg_search_internal.h"

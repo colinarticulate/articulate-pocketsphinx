@@ -53,8 +53,8 @@ extern "C" {
 #endif
 
 /* SphinxBase headers. */
-#include <sphinxbase/mmio.h>
-#include <sphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/mmio.h>
+#include <xyzsphinxbase/cmd_ln.h>
 #include <pocketsphinx_export.h>
 
 #include "mdef.h"

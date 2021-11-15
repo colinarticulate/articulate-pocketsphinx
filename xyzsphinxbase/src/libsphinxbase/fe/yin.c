@@ -39,11 +39,11 @@
  * Society of America, 111 (4), April 2002.
  */
 
-#include "sphinxbase/prim_type.h"
-#include "sphinxbase/ckd_alloc.h"
-#include "sphinxbase/fixpoint.h"
+#include "xyzsphinxbase/prim_type.h"
+#include "xyzsphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/fixpoint.h"
 
-#include "sphinxbase/yin.h"
+#include "xyzsphinxbase/yin.h"
 
 #include <stdio.h>
 #include <string.h>
