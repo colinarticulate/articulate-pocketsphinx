@@ -145,6 +145,7 @@ def replace_sphinxbase_system_header(path, pattern, new_pattern):
     return files
 
 
+
 def change_sphinxbase_sourcecode_headers():
     #System
     pattern = "#include <sphinxbase/"
