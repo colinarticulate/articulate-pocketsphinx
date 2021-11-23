@@ -15,7 +15,7 @@
         "previous": ["sphinxbase.pc"],
         "new":      ["sphinxbase.pc"]
         },
-        
+
     "include/Makefile.am": {
         "previous": ["SUBDIRS = sphinxbase"],
         "new":      ["SUBDIRS = sphinxbase"]

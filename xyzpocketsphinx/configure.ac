@@ -130,7 +130,7 @@ PKG_CONFIG_PATH environment variable is set correctly, if
 it was installed in a non-standard prefix.])])
       XYZSPHINXBASE_PREFIX=`$PKG_CONFIG --variable=prefix xyzsphinxbase`
    fi
-   
+
    LIBS="$LIBS $XYZSPHINXBASE_LIBS"
    CPPFLAGS="$CPPFLAGS $XYZSPHINXBASE_CFLAGS"
    SPHINXBASE_SWIG="$XYZSPHINXBASE_PREFIX/share/xyzsphinxbase/swig"
@@ -142,7 +142,7 @@ else
    SPHINXBASE_SWIG="$xyzsphinxbase/swig"
 fi
 
-AC_SUBST(SPHINXBASE_SWIG)
+AC_SUBST(XYZSPHINXBASE_SWIG)
 
 AC_OUTPUT([
 xyzpocketsphinx.pc

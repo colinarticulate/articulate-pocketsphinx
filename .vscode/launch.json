@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "name": "debug with gdb (no build)",
             "type": "cppdbg",
@@ -100,3 +99,4 @@
 //       "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
 //     }
 //   }
+
