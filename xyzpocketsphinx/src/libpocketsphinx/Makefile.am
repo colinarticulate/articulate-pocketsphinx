@@ -71,5 +71,5 @@ noinst_HEADERS =				\
 AM_CFLAGS =\
 	-I$(top_srcdir)/include \
 	-I$(top_builddir)/include \
-	-DMODELDIR=\"${prefix}/share/pocketsphinx/model\"
+	-DMODELDIR=\"${prefix}/share/xyzpocketsphinx/model\"
 

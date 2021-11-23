@@ -73,17 +73,17 @@ AC_SUBST(GST_PLUGIN_LDFLAGS)
 dnl
 dnl Get xyzSphinxBase from command line if given
 dnl
-AC_ARG_WITH(sphinxbase,
-	AS_HELP_STRING([--with-xyzsphinxbase=DIRECTORY],
+AC_ARG_WITH(xyzsphinxbase,
+	AS_HELP_STRING([--with-xyzxyzsphinxbase=DIRECTORY],
 			[Look for xyzSphinxBase installation in DIRECTORY.  If this is 'auto',
 			 the system-wide installation will be used.]),
-			 sphinxbase=$withval)
+			 xyzxyzsphinxbase=$withval)
 
 
 dnl
 dnl Check for xyzSphinxBase in parent directories
 dnl
-if test x$sphinxbase = x; then
+if test x$xyzsphinxbase = x; then
    dn=`dirname $0`
    case "$dn" in
 	.)
@@ -99,9 +99,9 @@ if test x$sphinxbase = x; then
    # Look for xyzsphinxbase in the parent directory
    for sb in "$sbdir/xyzsphinxbase" \
 	  "$sbdir/xyzsphinxbase"*; do
-       AC_MSG_CHECKING([for sphinxbase in $sb])
+       AC_MSG_CHECKING([for xyzsphinxbase in $sb])
        if test -f "$sb/src/libsphinxbase/libxyzsphinxbase.la"; then
-          sphinxbase="$sb"
+          xyzsphinxbase="$sb"
 	  AC_MSG_RESULT(yes)
 	  break
        else
@@ -111,35 +111,35 @@ if test x$sphinxbase = x; then
 fi
 
 dnl
-dnl Check for system xyzSphinxBase if none was passed to us
+dnl Check for system xyzxyzSphinxBase if none was passed to us
 dnl Also allow --with-xyzsphinxbase=auto to use system one explicitly
 dnl
-if test x$sphinxbase = x || test x$sphinxbase = xauto; then
-   sphinxbase=
+if test x$xyzsphinxbase = x || test x$xyzsphinxbase = xauto; then
+   xyzsphinxbase=
 
    if test "x$PKG_CONFIG" = "x"; then
-      SPHINXBASE_CFLAGS = "-I/usr/include/xyzsphinxbase -I/usr/local/include/xyzsphinxbase"
-      SPHINXBASE_LIBS = "-lxyzsphinxbase"
-      SPHINXBASE_PREFIX="/usr/local"
+      XYZSPHINXBASE_CFLAGS = "-I/usr/include/xyzsphinxbase -I/usr/local/include/xyzsphinxbase"
+      XYZSPHINXBASE_LIBS = "-lxyzsphinxbase"
+      XYZSPHINXBASE_PREFIX="/usr/local"
    else
-      PKG_CHECK_MODULES(SPHINXBASE, [xyzsphinxbase],,[
+      PKG_CHECK_MODULES(XYZSPHINXBASE, [xyzsphinxbase],,[
       AC_MSG_FAILURE(dnl
 [xyzSphinxBase was not found on your system.
 Make sure that you have installed it and that the
 PKG_CONFIG_PATH environment variable is set correctly, if
 it was installed in a non-standard prefix.])])
-      SPHINXBASE_PREFIX=`$PKG_CONFIG --variable=prefix xyzsphinxbase`
+      XYZSPHINXBASE_PREFIX=`$PKG_CONFIG --variable=prefix xyzsphinxbase`
    fi
    
-   LIBS="$LIBS $SPHINXBASE_LIBS"
-   CPPFLAGS="$CPPFLAGS $SPHINXBASE_CFLAGS"
-   SPHINXBASE_SWIG="$SPHINXBASE_PREFIX/share/xyzsphinxbase/swig"
+   LIBS="$LIBS $XYZSPHINXBASE_LIBS"
+   CPPFLAGS="$CPPFLAGS $XYZSPHINXBASE_CFLAGS"
+   SPHINXBASE_SWIG="$XYZSPHINXBASE_PREFIX/share/xyzsphinxbase/swig"
    AC_CHECK_HEADER(sphinx_config.h,,[AC_MSG_FAILURE([xyzSphinxBase was not found on your system.])])
 else
    LIBS="$LIBS -lxyzsphinxbase"
-   LDFLAGS="$LDFLAGS -L$sphinxbase/lib -L$sphinxbase/src/libsphinxad -L$sphinxbase/src/libsphinxbase"
-   CPPFLAGS="$CPPFLAGS -I$sphinxbase/include -I$sphinxbase/include/sphinxbase"
-   SPHINXBASE_SWIG="$sphinxbase/swig"
+   LDFLAGS="$LDFLAGS -L$xyzsphinxbase/lib -L$xyzsphinxbase/src/libsphinxad -L$xyzsphinxbase/src/libsphinxbase"
+   CPPFLAGS="$CPPFLAGS -I$xyzsphinxbase/include -I$xyzsphinxbase/include/xyzsphinxbase"
+   SPHINXBASE_SWIG="$xyzsphinxbase/swig"
 fi
 
 AC_SUBST(SPHINXBASE_SWIG)

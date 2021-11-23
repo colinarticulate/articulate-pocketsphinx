@@ -1,4 +1,4 @@
-SUBDIRS = sphinxbase
+SUBDIRS = xyzsphinxbase
 
 pkginclude_HEADERS = \
 	sphinx_config.h

@@ -84,12 +84,12 @@ typedef int bool;
 #define false 0
 #endif
 
-#include <sphinxbase/cmd_ln.h>
-#include <sphinxbase/err.h>
-#include <sphinxbase/fe.h>
-#include <sphinxbase/feat.h>
-#include <sphinxbase/jsgf.h>
-#include <sphinxbase/ngram_model.h>
+#include <xyzsphinxbase/cmd_ln.h>
+#include <xyzsphinxbase/err.h>
+#include <xyzsphinxbase/fe.h>
+#include <xyzsphinxbase/feat.h>
+#include <xyzsphinxbase/jsgf.h>
+#include <xyzsphinxbase/ngram_model.h>
 
 typedef cmd_ln_t Config;
 typedef jsgf_t Jsgf;

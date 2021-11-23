@@ -2,8 +2,8 @@
     {
 
     "configure.ac": {
-        "previous": ["AC_INIT([sphinxbase], 5prealpha)", "sphinxbase.pc"],
-        "new":      ["AC_INIT([sphinxbase], 5prealpha)", "sphinxbase.pc"]
+        "previous": ["AC_INIT([sphinxbase], 5prealpha)", "sphinxbase.pc", "include/sphinxbase/Makefile"],
+        "new":      ["AC_INIT([sphinxbase], 5prealpha)", "sphinxbase.pc", "include/sphinxbase/Makefile"]
         },
 
     "sphinxbase.pc.in": {
@@ -11,39 +11,50 @@
         "new":      ["Name: SphinxBase", "-lsphinxbase", "-lsphinxad", "-I${includedir}/sphinxbase"]
         },
 
+    "Makefile.am": {
+        "previous": ["sphinxbase.pc"],
+        "new":      ["sphinxbase.pc"]
+        },
+        
+    "include/Makefile.am": {
+        "previous": ["SUBDIRS = sphinxbase"],
+        "new":      ["SUBDIRS = sphinxbase"]
+        },
+
+
    "src/libsphinxad/Makefile.am": {
-        "previous": ["libsphinxad.la", "libsphinxad_la_LDFLAGS", "libsphinxad_la_SOURCES", "EXTRA_libsphinxad_la_SOURCES", "libsphinxad_la_DEPENDENCIES", "libsphinxad_la_LIBADD", "libsphinxbase.la"],
-        "new":      ["libsphinxad.la", "libsphinxad_la_LDFLAGS", "libsphinxad_la_SOURCES", "EXTRA_libsphinxad_la_SOURCES", "libsphinxad_la_DEPENDENCIES", "libsphinxad_la_LIBADD", "libsphinxbase.la"]
+        "previous": ["libsphinxad.la", "libsphinxad_la_LDFLAGS", "libsphinxad_la_SOURCES", "EXTRA_libsphinxad_la_SOURCES", "libsphinxad_la_DEPENDENCIES", "libsphinxad_la_LIBADD", "libsphinxbase.la", "-I$(top_srcdir)/include/sphinxbase"],
+        "new":      ["libsphinxad.la", "libsphinxad_la_LDFLAGS", "libsphinxad_la_SOURCES", "EXTRA_libsphinxad_la_SOURCES", "libsphinxad_la_DEPENDENCIES", "libsphinxad_la_LIBADD", "libsphinxbase.la", "-I$(top_srcdir)/include/sphinxbase"]
         },
 
     "src/libsphinxbase/Makefile.am": {
-        "previous": ["libsphinxbase.la", "libsphinxutil.la", "libsphinxfe.la", "libsphinxfeat.la", "libsphinxlm.la", "libsphinxbase_la_SOURCES", "libsphinxbase_la_LDFLAGS ", "libsphinxbase_la_LIBADD"],
-        "new":      ["libsphinxbase.la", "libsphinxutil.la", "libsphinxfe.la", "libsphinxfeat.la", "libsphinxlm.la", "libsphinxbase_la_SOURCES", "libsphinxbase_la_LDFLAGS ", "libsphinxbase_la_LIBADD"]
+        "previous": ["libsphinxbase.la", "libsphinxutil.la", "libsphinxfe.la", "libsphinxfeat.la", "libsphinxlm.la", "libsphinxbase_la_SOURCES", "libsphinxbase_la_LDFLAGS ", "libsphinxbase_la_LIBADD", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"],
+        "new":      ["libsphinxbase.la", "libsphinxutil.la", "libsphinxfe.la", "libsphinxfeat.la", "libsphinxlm.la", "libsphinxbase_la_SOURCES", "libsphinxbase_la_LDFLAGS ", "libsphinxbase_la_LIBADD", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"]
         },
 
     "src/libsphinxbase/util/Makefile.am": {
-        "previous": ["libsphinxutil.la", "libsphinxutil_la_SOURCES"], 
-        "new":      ["libsphinxutil.la", "libsphinxutil_la_SOURCES"]
+        "previous": ["libsphinxutil.la", "libsphinxutil_la_SOURCES", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"],
+        "new":      ["libsphinxutil.la", "libsphinxutil_la_SOURCES", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"]
         },
 
     "src/libsphinxbase/lm/Makefile.am": {
-        "previous": ["libsphinxlm.la", "libsphinxlm_la_SOURCES", "libsphinxlm_la_LIBADD"],
-        "new":      ["libsphinxlm.la", "libsphinxlm_la_SOURCES", "libsphinxlm_la_LIBADD"]
+        "previous": ["libsphinxlm.la", "libsphinxlm_la_SOURCES", "libsphinxlm_la_LIBADD", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"],
+        "new":      ["libsphinxlm.la", "libsphinxlm_la_SOURCES", "libsphinxlm_la_LIBADD", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"]
     },
 
     "src/libsphinxbase/feat/Makefile.am": {
-        "previous": ["libsphinxfeat.la", "libsphinxfeat_la_SOURCES"],
-        "new":      ["libsphinxfeat.la", "libsphinxfeat_la_SOURCES"]
+        "previous": ["libsphinxfeat.la", "libsphinxfeat_la_SOURCES", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"],
+        "new":      ["libsphinxfeat.la", "libsphinxfeat_la_SOURCES", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"]
         },
 
     "src/libsphinxbase/fe/Makefile.am": {
-        "previous": ["libsphinxfe.la", "libsphinxfe_la_SOURCES"],
-        "new":      ["libsphinxfe.la", "libsphinxfe_la_SOURCES"]
+        "previous": ["libsphinxfe.la", "libsphinxfe_la_SOURCES", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"],
+        "new":      ["libsphinxfe.la", "libsphinxfe_la_SOURCES", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase"]
         },
 
     "src/sphinx_adtools/Makefile.am": {
         "previous": ["bin_PROGRAMS = sphinx_pitch sphinx_cont_seg", "sphinx_pitch_SOURCES", "sphinx_pitch_LDADD", "sphinx_cont_seg_SOURCES", "sphinx_cont_seg_LDADD", "libsphinxbase.la", "libsphinxad.la"],
-        "new":      ["bin_PROGRAMS = sphinx_pitch sphinx_cont_seg", "sphinx_pitch_SOURCES", "sphinx_pitch_LDADD", "sphinx_cont_seg_SOURCES", "sphinx_cont_seg_LDADD", "libsphinxbase.la", "libsphinxad.la"] 
+        "new":      ["bin_PROGRAMS = sphinx_pitch sphinx_cont_seg", "sphinx_pitch_SOURCES", "sphinx_pitch_LDADD", "sphinx_cont_seg_SOURCES", "sphinx_cont_seg_LDADD", "libsphinxbase.la", "libsphinxad.la"]
         },
 
     "src/sphinx_cepview/Makefile.am": {

@@ -27,7 +27,7 @@ noinst_HEADERS = ngram_model_internal.h		\
 	jsgf_scanner.h				\
 	jsgf_parser.h
 
-AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase \
+AM_CFLAGS =-I$(top_srcdir)/include/xyzsphinxbase \
 	   -I$(top_srcdir)/include \
 	   -I$(top_builddir)/include
 

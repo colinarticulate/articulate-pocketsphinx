@@ -42,10 +42,10 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "sphinxbase/err.h"
-#include "sphinxbase/ckd_alloc.h"
-#include "sphinxbase/strfuncs.h"
-#include "sphinxbase/filename.h"
+#include "xyzsphinxbase/err.h"
+#include "xyzsphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/strfuncs.h"
+#include "xyzsphinxbase/filename.h"
 
 #include "ngram_model_set.h"
 

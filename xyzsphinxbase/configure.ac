@@ -189,7 +189,7 @@ AC_CONFIG_FILES([
 xyzsphinxbase.pc
 Makefile
 include/Makefile
-include/sphinxbase/Makefile
+include/xyzsphinxbase/Makefile
 src/Makefile
 src/libsphinxad/Makefile
 src/libsphinxbase/Makefile

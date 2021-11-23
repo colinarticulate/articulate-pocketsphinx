@@ -3,29 +3,95 @@
 
     {
 
-    "configure.ac": {   
-        "previous": ["AC_INIT(pocketsphinx, 5prealpha)", "dnl Get SphinxBase from command line if given", "AS_HELP_STRING([--with-sphinxbase=DIRECTORY]", "[Look for SphinxBase installation in DIRECTORY.", "dnl Check for SphinxBase in parent directories", "# Look for sphinxbase in the parent directory", "sbdir/sphinxbase", "libsphinxbase.la", "dnl Check for system SphinxBase if none was passed to us", "dnl Also allow --with-sphinxbase=auto to use system one explicitly", "-I/usr/include/sphinxbase -I/usr/local/include/sphinxbase", "-lsphinxbase", "PKG_CHECK_MODULES(SPHINXBASE, [sphinxbase],,[", "[SphinxBase was not found on your system.", "PKG_CONFIG --variable=prefix sphinxbase", "SPHINXBASE_PREFIX/share/sphinxbase/swig", "AC_CHECK_HEADER(sphinx_config.h,,[AC_MSG_FAILURE([SphinxBase was not found on your system.])])", "pocketsphinx.pc"],
-        "new":      ["AC_INIT(pocketsphinx, 5prealpha)", "dnl Get SphinxBase from command line if given", "AS_HELP_STRING([--with-sphinxbase=DIRECTORY]", "[Look for SphinxBase installation in DIRECTORY.", "dnl Check for SphinxBase in parent directories", "# Look for sphinxbase in the parent directory", "sbdir/sphinxbase", "libsphinxbase.la", "dnl Check for system SphinxBase if none was passed to us", "dnl Also allow --with-sphinxbase=auto to use system one explicitly", "-I/usr/include/sphinxbase -I/usr/local/include/sphinxbase", "-lsphinxbase", "PKG_CHECK_MODULES(SPHINXBASE, [sphinxbase],,[", "[SphinxBase was not found on your system.", "PKG_CONFIG --variable=prefix sphinxbase", "SPHINXBASE_PREFIX/share/sphinxbase/swig", "AC_CHECK_HEADER(sphinx_config.h,,[AC_MSG_FAILURE([SphinxBase was not found on your system.])])", "pocketsphinx.pc"],
+    "configure.ac": {
+        "previous": ["AC_INIT(pocketsphinx, 5prealpha)",
+                    "dnl Get SphinxBase from command line if given",
+                    "AC_ARG_WITH(sphinxbase,",
+                    "AS_HELP_STRING([--with-sphinxbase=DIRECTORY]",
+                    "[Look for SphinxBase installation in DIRECTORY.",
+                    "sphinxbase=$withval",
+                    "dnl Check for SphinxBase in parent directories",
+                    "if test x$sphinxbase = x; then",
+                    "# Look for sphinxbase in the parent directory",
+                    "sbdir/sphinxbase",
+                    "AC_MSG_CHECKING([for sphinxbase in $sb])",
+                    "sphinxbase=",
+                    "libsphinxbase.la",
+                    "dnl Check for system SphinxBase if none was passed to us",
+                    "dnl Also allow --with-sphinxbase=auto to use system one explicitly",
+                    "if test x$sphinxbase = x || test x$sphinxbase = xauto; then",
+                    "SPHINXBASE_CFLAGS",
+                    "SPHINXBASE_LIBS",
+                    "SPHINXBASE_PREFIX",
+                    "SPHINXBASE_SWIG",
+                    "-I/usr/include/sphinxbase -I/usr/local/include/sphinxbase",
+                    "-lsphinxbase",
+                    "PKG_CHECK_MODULES(SPHINXBASE, [sphinxbase],,[",
+                    "[SphinxBase was not found on your system.",
+                    "PKG_CONFIG --variable=prefix sphinxbase",
+                    "/share/sphinxbase/swig",
+                    "AC_CHECK_HEADER(sphinx_config.h,,[AC_MSG_FAILURE([SphinxBase was not found on your system.])])",
+                    "-L$sphinxbase/",
+                    "src/libsphinxad",
+                    "src/libsphinxbase",
+                    "/include/sphinxbase",
+                    "-I$sphinxbase/",
+                    "$sphinxbase/swig",
+                    "pocketsphinx.pc"],
+        "new":      ["AC_INIT(pocketsphinx, 5prealpha)",
+                    "dnl Get SphinxBase from command line if given",
+                    "AC_ARG_WITH(sphinxbase,",
+                    "AS_HELP_STRING([--with-sphinxbase=DIRECTORY]",
+                    "[Look for SphinxBase installation in DIRECTORY.",
+                    "sphinxbase=$withval",
+                    "dnl Check for SphinxBase in parent directories",
+                    "if test x$sphinxbase = x; then",
+                    "# Look for sphinxbase in the parent directory",
+                    "sbdir/sphinxbase",
+                    "AC_MSG_CHECKING([for sphinxbase in $sb])",
+                    "sphinxbase=",
+                    "libsphinxbase.la",
+                    "dnl Check for system SphinxBase if none was passed to us",
+                    "dnl Also allow --with-sphinxbase=auto to use system one explicitly",
+                    "if test x$sphinxbase = x || test x$sphinxbase = xauto; then",
+                    "SPHINXBASE_CFLAGS",
+                    "SPHINXBASE_LIBS",
+                    "SPHINXBASE_PREFIX",
+                    "SPHINXBASE_SWIG",
+                    "-I/usr/include/sphinxbase -I/usr/local/include/sphinxbase",
+                    "-lsphinxbase",
+                    "PKG_CHECK_MODULES(SPHINXBASE, [sphinxbase],,[",
+                    "[SphinxBase was not found on your system.",
+                    "PKG_CONFIG --variable=prefix sphinxbase",
+                    "/share/sphinxbase/swig",
+                    "AC_CHECK_HEADER(sphinx_config.h,,[AC_MSG_FAILURE([SphinxBase was not found on your system.])])",
+                    "-L$sphinxbase/",
+                    "src/libsphinxad",
+                    "src/libsphinxbase",
+                    "/include/sphinxbase",
+                    "-I$sphinxbase/",
+                    "$sphinxbase/swig",
+                    "pocketsphinx.pc"]
         },
 
-   "pocketsphinx.pc.in": {   
+   "pocketsphinx.pc.in": {
         "previous": ["Name: PocketSphinx", "Requires: sphinxbase >= ", "-lpocketsphinx", "-I${includedir}/sphinxbase", "-I${includedir}/pocketsphinx"],
-        "new":      ["Name: PocketSphinx", "Requires: sphinxbase >= ", "-lpocketsphinx", "-I${includedir}/sphinxbase", "-I${includedir}/pocketsphinx"] 
+        "new":      ["Name: PocketSphinx", "Requires: sphinxbase >= ", "-lpocketsphinx", "-I${includedir}/sphinxbase", "-I${includedir}/pocketsphinx"]
         },
 
-    "src/libpocketsphinx/Makefile.am": {   
-        "previous": ["libpocketsphinx.la", "libpocketsphinx_la_LDFLAGS", "libpocketsphinx_la_SOURCES"], "-DMODELDIR=\"${prefix}/share/pocketsphinx/model\""
-        "new":      ["libpocketsphinx.la", "libpocketsphinx_la_LDFLAGS", "libpocketsphinx_la_SOURCES"]  
+    "src/libpocketsphinx/Makefile.am": {
+        "previous": ["libpocketsphinx.la", "libpocketsphinx_la_LDFLAGS", "libpocketsphinx_la_SOURCES", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase", "/share/pocketsphinx/model"],
+        "new":      ["libpocketsphinx.la", "libpocketsphinx_la_LDFLAGS", "libpocketsphinx_la_SOURCES", "AM_CFLAGS =-I$(top_srcdir)/include/sphinxbase", "/share/pocketsphinx/model"]
         },
 
-    "src/programs/Makefile.am": {   
+    "src/programs/Makefile.am": {
         "previous": ["pocketsphinx_batch", "pocketsphinx_continuous", "pocketsphinx_mdef_convert", "libpocketsphinx.la ", "-lsphinxad", "pocketsphinx_mdef_convert_SOURCES", "pocketsphinx_mdef_convert_LDADD", "pocketsphinx_batch_SOURCES", "pocketsphinx_batch_LDADD", "pocketsphinx_continuous_SOURCES", "pocketsphinx_continuous_LDADD"],
-        "new":      ["pocketsphinx_batch", "pocketsphinx_continuous", "pocketsphinx_mdef_convert", "libpocketsphinx.la ", "-lsphinxad", "pocketsphinx_mdef_convert_SOURCES", "pocketsphinx_mdef_convert_LDADD", "pocketsphinx_batch_SOURCES", "pocketsphinx_batch_LDADD", "pocketsphinx_continuous_SOURCES", "pocketsphinx_continuous_LDADD"] 
+        "new":      ["pocketsphinx_batch", "pocketsphinx_continuous", "pocketsphinx_mdef_convert", "libpocketsphinx.la ", "-lsphinxad", "pocketsphinx_mdef_convert_SOURCES", "pocketsphinx_mdef_convert_LDADD", "pocketsphinx_batch_SOURCES", "pocketsphinx_batch_LDADD", "pocketsphinx_continuous_SOURCES", "pocketsphinx_continuous_LDADD"]
         },
 
-   "src/gst-plugin/Makefile.am": {   
+   "src/gst-plugin/Makefile.am": {
         "previous": ["libgstpocketsphinx.la", "libpocketsphinx.la", "-lsphinxbase", "libgstpocketsphinx_la_SOURCES", "libgstpocketsphinx_la_LIBADD", "libgstpocketsphinx_la_LDFLAGS"],
-        "new":      ["libgstpocketsphinx.la", "libpocketsphinx.la", "-lsphinxbase", "libgstpocketsphinx_la_SOURCES", "libgstpocketsphinx_la_LIBADD", "libgstpocketsphinx_la_LDFLAGS"]  
+        "new":      ["libgstpocketsphinx.la", "libpocketsphinx.la", "-lsphinxbase", "libgstpocketsphinx_la_SOURCES", "libgstpocketsphinx_la_LIBADD", "libgstpocketsphinx_la_LDFLAGS"]
         },
 
     "swig/python/Makefile.am": {

@@ -53,10 +53,10 @@
 
 #include <math.h>
 
-#include "sphinxbase/prim_type.h"
-#include "sphinxbase/ckd_alloc.h"
-#include "sphinxbase/strfuncs.h"
-#include "sphinxbase/err.h"
+#include "xyzsphinxbase/prim_type.h"
+#include "xyzsphinxbase/ckd_alloc.h"
+#include "xyzsphinxbase/strfuncs.h"
+#include "xyzsphinxbase/err.h"
 
 #include "fe_noise.h"
 #include "fe_internal.h"

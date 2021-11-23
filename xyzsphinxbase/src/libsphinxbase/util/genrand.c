@@ -79,7 +79,7 @@
 
 #include <stdio.h>
 
-#include "sphinxbase/genrand.h"
+#include "xyzsphinxbase/genrand.h"
 
 /* Period parameters */
 #define N 624
