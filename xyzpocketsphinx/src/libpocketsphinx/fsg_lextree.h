@@ -62,7 +62,8 @@ extern "C" {
  * Make it smaller (2) to save memory if your phoneset has less than
  * 64 phones.
  */
-#define FSG_PNODE_CTXT_BVSZ	4
+//#define FSG_PNODE_CTXT_BVSZ	4 //default
+#define FSG_PNODE_CTXT_BVSZ	8
 
 typedef struct fsg_pnode_ctxt_s {
     uint32 bv[FSG_PNODE_CTXT_BVSZ];
