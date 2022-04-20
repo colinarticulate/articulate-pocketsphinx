@@ -81,31 +81,31 @@ void
 err_msg(err_lvl_t lvl, const char *path, long ln, const char *fmt, ...)
 {
     // C++ no-logging:
-    static const char *err_prefix[ERR_MAX] = {
-        "DEBUG", "INFO", "INFOCONT", "WARN", "ERROR", "FATAL"
-    };
+    // static const char *err_prefix[ERR_MAX] = {
+    //     "DEBUG", "INFO", "INFOCONT", "WARN", "ERROR", "FATAL"
+    // };
 
-    char msg[1024];
-    va_list ap;
+    // char msg[1024];
+    // va_list ap;
 
-    if (!err_cb)
-        return;
+    // if (!err_cb)
+    //     return;
 
-    va_start(ap, fmt);
-    vsnprintf(msg, sizeof(msg), fmt, ap);
-    va_end(ap);
+    // va_start(ap, fmt);
+    // vsnprintf(msg, sizeof(msg), fmt, ap);
+    // va_end(ap);
 
-    if (path) {
-        const char *fname = path2basename(path);
-        if (lvl == ERR_INFOCONT)
-    	    err_cb(err_user_data, lvl, "%s(%ld): %s", fname, ln, msg);
-        else if (lvl == ERR_INFO)
-            err_cb(err_user_data, lvl, "%s: %s(%ld): %s", err_prefix[lvl], fname, ln, msg);
-        else
-    	    err_cb(err_user_data, lvl, "%s: \"%s\", line %ld: %s", err_prefix[lvl], fname, ln, msg);
-    } else {
-        err_cb(err_user_data, lvl, "%s", msg);
-    }
+    // if (path) {
+    //     const char *fname = path2basename(path);
+    //     if (lvl == ERR_INFOCONT)
+    // 	    err_cb(err_user_data, lvl, "%s(%ld): %s", fname, ln, msg);
+    //     else if (lvl == ERR_INFO)
+    //         err_cb(err_user_data, lvl, "%s: %s(%ld): %s", err_prefix[lvl], fname, ln, msg);
+    //     else
+    // 	    err_cb(err_user_data, lvl, "%s: \"%s\", line %ld: %s", err_prefix[lvl], fname, ln, msg);
+    // } else {
+    //     err_cb(err_user_data, lvl, "%s", msg);
+    // }
 }
 
 #ifdef _WIN32_WCE /* No strerror for WinCE, so a separate implementation */
@@ -159,33 +159,33 @@ void
 err_msg_system(err_lvl_t lvl, const char *path, long ln, const char *fmt, ...)
 {
     // C++ no-logging: 
-    int local_errno = errno;
+    // int local_errno = errno;
     
-    static const char *err_prefix[ERR_MAX] = {
-        "DEBUG", "INFO", "INFOCONT", "WARN", "ERROR", "FATAL"
-    };
+    // static const char *err_prefix[ERR_MAX] = {
+    //     "DEBUG", "INFO", "INFOCONT", "WARN", "ERROR", "FATAL"
+    // };
 
-    char msg[1024];
-    va_list ap;
+    // char msg[1024];
+    // va_list ap;
 
-    if (!err_cb)
-        return;
+    // if (!err_cb)
+    //     return;
 
-    va_start(ap, fmt);
-    vsnprintf(msg, sizeof(msg), fmt, ap);
-    va_end(ap);
+    // va_start(ap, fmt);
+    // vsnprintf(msg, sizeof(msg), fmt, ap);
+    // va_end(ap);
 
-    if (path) {
-        const char *fname = path2basename(path);
-        if (lvl == ERR_INFOCONT)
-    	    err_cb(err_user_data, lvl, "%s(%ld): %s: %s\n", fname, ln, msg, strerror(local_errno));
-        else if (lvl == ERR_INFO)
-            err_cb(err_user_data, lvl, "%s: %s(%ld): %s: %s\n", err_prefix[lvl], fname, ln, msg, strerror(local_errno));
-        else
-    	    err_cb(err_user_data, lvl, "%s: \"%s\", line %ld: %s: %s\n", err_prefix[lvl], fname, ln, msg, strerror(local_errno));
-    } else {
-        err_cb(err_user_data, lvl, "%s: %s\n", msg, strerror(local_errno));
-    }
+    // if (path) {
+    //     const char *fname = path2basename(path);
+    //     if (lvl == ERR_INFOCONT)
+    // 	    err_cb(err_user_data, lvl, "%s(%ld): %s: %s\n", fname, ln, msg, strerror(local_errno));
+    //     else if (lvl == ERR_INFO)
+    //         err_cb(err_user_data, lvl, "%s: %s(%ld): %s: %s\n", err_prefix[lvl], fname, ln, msg, strerror(local_errno));
+    //     else
+    // 	    err_cb(err_user_data, lvl, "%s: \"%s\", line %ld: %s: %s\n", err_prefix[lvl], fname, ln, msg, strerror(local_errno));
+    // } else {
+    //     err_cb(err_user_data, lvl, "%s: %s\n", msg, strerror(local_errno));
+    // }
 }
 #endif
 
