@@ -2,6 +2,8 @@
 Repo to create variations of CMU's pocketsphinx.  
 This is the xyz version; our first prototype.  
 
+This branch disables logging which otherwise causes multithreading issues.  
+
 
 ## System installation  
 Should work the same way as with the original pocketsphinx installation.  
