@@ -224,7 +224,7 @@ test/unit/test_thread/Makefile
 test/unit/test_util/Makefile
 test/regression/testfuncs.sh
 test/regression/Makefile
-# swig/Makefile
-# swig/python/Makefile
+swig/Makefile
+swig/python/Makefile
 ])
 AC_OUTPUT
